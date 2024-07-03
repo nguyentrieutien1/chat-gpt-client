@@ -1,24 +1,45 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,jsx,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.no-scrollbar::-webkit-scrollbar': {
-          'display': 'none',
+    content: ["./src/**/*.{html,jsx,js}"],
+    theme: {
+        extend: {
+            keyframes: {
+                'trans-down': {
+                    '0%': {
+                        opacity: 0,
+                        transform: 'translateY(-10px)'
+                    }, '100%': {
+                        opacity: 0,
+                        transform: 'translateY(0)'
+                    }
+                }
+            },
+            animation: {
+                'trans-down': 'trans-down 0.2s linear'
+            }
         },
-        '.no-scrollbar': {
-          "-ms-overflow-style": "none",
-          "scrollbar-width": "none"
-        },
-        '.fill-available': {
-          "width": '-webkit-fill-available',
-        },
-      };
-      addUtilities(newUtilities)
-    }
-  ],
+    },
+    plugins: [
+        function ({addUtilities}) {
+            const newUtilities = {
+                '.no-scrollbar::-webkit-scrollbar': {
+                    'display': 'none',
+                },
+                '.no-scrollbar': {
+                    "-ms-overflow-style": "none",
+                    "scrollbar-width": "none"
+                },
+                '.fill-available': {
+                    "width": '-webkit-fill-available',
+                },
+                '.h-chat-form': {
+                    "height": 'calc(100% - 56px)'
+                },
+                '.w-user-chat': {
+                    "max-width": 'calc(100% - 64px)'
+                }
+            };
+            addUtilities(newUtilities)
+        }
+    ],
 }
