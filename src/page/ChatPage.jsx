@@ -10,6 +10,7 @@ const ChatPage = () => {
 
     const [countChar, setCountChar] = useState(0);
     const [value, setValue] = useState("");
+    const [valueLink, setValueLink] = useState("");
 
     const handleChange = (e) => {
         setCountChar(e.target.value.length);
@@ -33,13 +34,11 @@ const ChatPage = () => {
                             <NewChat option={option} setOption={setOption}/>
                         </>
                 }
-
-
             </div>
 
 
             <div className="absolute bottom-0 left-0 right-0">
-                <div className="relative pt-3 bg-[#121521]">
+                <form className="relative pt-3 bg-[#121521]">
                     <input max={500}
                            className="bg-[#222838] text-white font-medium py-4 pl-4 pr-28 rounded-lg w-full border-[0.5px] border-[#222838] hover:border-gray-200 outline-1 outline-[#222838] focus:outline-blue-500 transition-all"
                            value={value}
@@ -51,12 +50,18 @@ const ChatPage = () => {
                         <IoSend size={12} className="text-white"/>
                         <p className="font-medium text-white text-[16px]">Send</p>
                     </div>
-                </div>
+                    <input max={500}
+                           className="absolute -top-12 right-1 bg-[#222838] text-white font-medium py-3 pl-4 pr-28 rounded-lg w-[30%] border-[0.5px] border-[#222838] hover:border-gray-200 outline-1 outline-[#222838] focus:outline-blue-500 transition-all"
+                           value={valueLink}
+                           onChange={(e) => {setValueLink(e.target.value)}}
+                           placeholder={"Link..."}
+                           type="text"/>
+
+                </form>
 
                 <p className="text-right mt-1 text-white text-lg">{countChar} /500</p>
                 <p className="text-center text-lg font-normal text-[#BBBCC1] mt-2">Please be aware that this is an alpha
                     version of the AI, and as such it may not always behave as expected. Use it at your own risk.</p>
-
             </div>
         </div>
     );

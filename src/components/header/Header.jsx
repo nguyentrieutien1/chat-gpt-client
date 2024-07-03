@@ -1,17 +1,14 @@
-import {GoChevronDown} from "react-icons/go";
-import {IoMenuSharp} from "react-icons/io5";
-import {useState, useRef, useEffect} from "react";
 import Menu from "./Menu";
 import Profile from "./Profile";
 
 const Header = () => {
-
-
     return (
-        <div className="h-[56px] flex items-center justify-between mx-5">
-            <div className="flex items-center gap-5">
-                <div className="ml-10">
-                    <h1 className="font-bold text-white text-lg">Logo</h1>
+        <div className="h-[56px] flex items-center justify-between">
+            <div className="flex items-center gap-5 mx-5 ">
+                <div className="ml-10 ">
+                    <a href="/" className="block text-white text-lg font-medium max-w-[200px] overflow-hidden">
+                        <img className="py-1 h-12 w-40 object-cover" src="https://cdn.mypanel.link/aa7ed1/1q9o7rppeius8h1q.png" alt="logo"/>
+                    </a>
                 </div>
                 <ul className="h-full hidden xl:flex  lg:items-center lg:justify-start lg:gap-5  ">
                     <li>
