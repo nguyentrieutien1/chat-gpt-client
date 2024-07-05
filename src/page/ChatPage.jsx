@@ -1,9 +1,7 @@
 import { useState, useRef } from "react";
-import { IoDiamondOutline, IoSend } from "react-icons/io5";
+import {  IoSend } from "react-icons/io5";
 import ChatMessage from "../components/message/ChatMessage";
 import UserMessage from "../components/message/UserMessage";
-import Prompt from "../components/message/Prompt";
-import LoadingMessage from "../components/loading/LoadingMessage";
 import NewChat from "../components/message/NewChat";
 import axios from "axios";
 
