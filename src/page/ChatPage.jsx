@@ -61,6 +61,10 @@ const ChatPage = () => {
 
     };
 
+    useEffect(() => {
+        scrollToBottom();
+    }, [])
+
     const scrollToBottom = () => {
         const container = messageContainer.current;
         if (container) {
@@ -75,7 +79,7 @@ const ChatPage = () => {
         <div id="form_chat" className="relative h-full w-[90%] mx-auto">
             <div
                 ref={messageContainer}
-                className="h-chat-message" style={{overflowY: "scroll"}}
+                className="h-chat-message pb-6" style={{overflowY: "scroll"}}
             >
                 {conversions.length > 0 ? (
                     conversions.map((conversion, index) => (
