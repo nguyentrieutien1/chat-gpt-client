@@ -37,6 +37,9 @@ module.exports = {
                 },
                 '.w-user-chat': {
                     "max-width": 'calc(100% - 64px)'
+                },
+                '.h-chat-message': {
+                    "height": 'calc(100vh - 158px)'
                 }
             };
             addUtilities(newUtilities)
