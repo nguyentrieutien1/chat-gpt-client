@@ -7,7 +7,7 @@ import {HiXMark} from "react-icons/hi2";
 
 const ItemHistory = () => {
     const [isEdit, setIsEdit] = useState(false);
-    const [chanelName, setChanelName] = useState("Your chanlnel");
+    const [chanelName, setChanelName] = useState("Your channel");
     const [oldChanelName, setOldChanelName] = useState(chanelName);
     const [newChanelName, setNewChanelName] = useState(chanelName);
 

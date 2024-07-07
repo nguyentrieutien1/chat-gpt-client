@@ -38,7 +38,6 @@ const Sidebar = () => {
 
                 <div className="flex flex-col mt-2">
                     <GroupItemHistory name={"today"}/>
-                    <GroupItemHistory name={"yesterday"}/>
                 </div>
             </div>
             {

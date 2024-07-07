@@ -17,9 +17,8 @@ const ChatMessage = ({ message }) => {
 
   return (
     <>
-      {<LoadingMessage isSuccess={isLoading} />}
       {!isLoading && (
-        <div className="flex items-start gap-3 justify-start max-w-full mx-2 mt-4">
+        <div className="flex items-start flex-wrap gap-3 justify-start max-w-full mx-2 mt-4">
           <img
             className="w-12 h-12 object-cover rounded-full"
             src="https://static.vecteezy.com/system/resources/thumbnails/002/128/968/small_2x/phoenix-esports-logo-design-vector.jpg"
@@ -27,12 +26,12 @@ const ChatMessage = ({ message }) => {
           />
           <div>
             <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto font-medium">
-              {message.split("\n").map((song, index) => {
+              {message && message.split("\n").map((song, index) => {
                 return <div key={index}>{song}</div>;
               })}
             </p>
             {/*Like Share*/}
-            <div className="flex justify-between items-center gap-1 mt-1 max-w-[95%]">
+            <div className="flex justify-between flex-wrap items-center gap-1 mt-1 max-w-[95%]">
               <div className="flex items-center gap-2">
                 <BiLike
                   size={25}
@@ -54,7 +53,7 @@ const ChatMessage = ({ message }) => {
               </div>
             </div>
             {/* Prompt   */}
-            <Prompt />
+            {/* <Prompt /> */}
           </div>
         </div>
       )}

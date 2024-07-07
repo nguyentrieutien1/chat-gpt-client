@@ -1,5 +1,6 @@
 import {GoChevronDown} from "react-icons/go";
 import {useEffect, useRef, useState} from "react";
+import { FaHeartbeat } from "react-icons/fa";
 
 const Profile = () => {
     const [isOpenProfile, setIsOpenProfile] = useState(false);
@@ -29,13 +30,11 @@ const Profile = () => {
                      setIsOpenProfile(!isOpenProfile);
                  }}
             >
-                <img className="w-10 h-10 object-cover rounded-full"
-                     src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
-                     alt="avartar"/>
+                <FaHeartbeat size={40} className="hover:bg-[#595F6F] rounded text-white p-1 transition-all " />
                 <GoChevronDown size={20} className="text-white"/>
             </div>
             <div ref={profileRef}
-                 className={`${isOpenProfile ? "opacity-100" : "opacity-0"} absolute top-12 right-0 w-[300px] bg-[#1F2437] shadow-lg rounded-lg pt-4 border-[1px] border-gray-400 z-50`}>
+                 className={`${isOpenProfile ? "opacity-100 block" : "opacity-0 hidden"} absolute top-12 right-0 w-[300px] bg-[#1F2437] shadow-lg rounded-lg pt-4 border-[1px] border-gray-400 z-50`}>
                 <div className="border-b-[1px] border-gray-400 pb-2">
                     <h2 className="px-3 text-lg text-[#f7f7f7]">Channels</h2>
                     <div className="px-3 flex items-center justify-between gap-2 mt-2">

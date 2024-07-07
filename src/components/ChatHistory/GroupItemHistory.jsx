@@ -8,8 +8,6 @@ const GroupItemHistory = ({name}) => {
 
             <div className="flex flex-col gap-5">
                 <ItemHistory/>
-                <ItemHistory/>
-                <ItemHistory/>
             </div>
 
         </div>
