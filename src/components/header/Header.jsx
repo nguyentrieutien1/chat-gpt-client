@@ -10,8 +10,9 @@ const Header = () => {
     setLink(localStorageHelper.localStorageHelper.getItem("link"));
   }, []);
   return (
-    <div className="h-[56px] flex items-center justify-between pt-3">
-      <div className="flex items-center gap-5 mx-5 ">
+    <div className="">
+       {/* <Menu /> */}
+      {/* <div className="flex items-center gap-5 mx-5 ">
         <div className="ml-10 ">
           <a
             href="/"
@@ -24,9 +25,9 @@ const Header = () => {
             />
           </a>
         </div>
-      </div>
+      </div> */}
       <div className="flex items-center gap-4 p-3">
-        <input
+        {/* <input
           max={500}
           className="bg-[#222838] text-white font-medium py-4 pl-4 pr-6 rounded-lg w-full border-[0.5px] border-[#222838] hover:border-gray-200 outline-1 outline-[#222838] focus:outline-blue-500 transition-all"
           placeholder={"Enter your link"}
@@ -39,15 +40,15 @@ const Header = () => {
             );
           }}
           type="text"
-        />
+        /> */}
         {/* <button className="hidden sm:block px-4 py-2 text-white font-medium bg-[#139DFF] hover:bg-[#005CE6] rounded-full transition-all">
           Download Extension
         </button> */}
 
         {/*Profile*/}
-        <Profile />
+        {/* <Profile /> */}
         {/*Menu*/}
-        <Menu />
+        {/* <Menu /> */}
       </div>
     </div>
   );

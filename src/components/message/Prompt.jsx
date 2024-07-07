@@ -1,16 +1,11 @@
 import { IoDiamondOutline } from "react-icons/io5";
 
-const Prompt = ({ type = "basic", handleReplaceValue = () => {} }) => {
-  const prompts = [
-    "What is idea for next video of channel.",
-    "How to have more views to my videos.",
-    "Suggest me some improvements for channel.",
-  ];
+const Prompt = ({ type = "basic", handleReplaceValue = () => {}, oldQuestion }) => {
   return (
     <div className="flex">
       <div class="flex items-start gap-3 justify-start max-w-full mx-2 mt-4">
         <div style={{display: "flex", flexDirection: "column"}}>
-          {prompts.map((prompt, index) => (
+          {oldQuestion.map((prompt, index) => (
             <p
             onClick={() => handleReplaceValue(prompt)}
               key={index}

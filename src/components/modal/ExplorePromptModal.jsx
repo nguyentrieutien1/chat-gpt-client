@@ -4,9 +4,6 @@ import SuggestPrompt from "./SuggestPrompt";
 
 const ExplorePromptModal = ({isOpenModal, setIsOpenModal}) => {
 
-
-
-
     return (
         <>
             <div
@@ -36,8 +33,6 @@ const ExplorePromptModal = ({isOpenModal, setIsOpenModal}) => {
                         <div className="relative px-6 py-3 flex-auto overflow-y-scroll no-scrollbar">
                            <SuggestPrompt title={"Most Popular"}/>
                            <SuggestPrompt title={"Video Strategy"}/>
-                           {/*<SuggestPrompt title={"Channel Analysis"}/>*/}
-                           {/*<SuggestPrompt title={"Audience Engagement"}/>*/}
                         </div>
                     </div>
                 </div>

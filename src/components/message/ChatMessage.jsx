@@ -1,10 +1,12 @@
 import { BiDislike, BiLike } from "react-icons/bi";
 import { MdIosShare, MdOutlineContentCopy } from "react-icons/md";
-import Prompt from "./Prompt";
-import LoadingMessage from "../loading/LoadingMessage";
 import { useState, useEffect } from "react";
-
-const ChatMessage = ({ message }) => {
+import html2canvas from "html2canvas";
+const ChatMessage = ({
+  message,
+  isLike = undefined,
+  handleFavariteMessage,
+}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,39 +17,86 @@ const ChatMessage = ({ message }) => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleShare = async () => {
+    const element = document.getElementById("root"); // id của phần tử bạn muốn chụp ảnh
+    html2canvas(element).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.download = "screenshot-namnguyenproduct.png";
+      link.href = imgData;
+      link.click();
+    });
+  };
+
   return (
     <>
       {!isLoading && (
-        <div className="flex items-start flex-wrap gap-3 justify-start max-w-full mx-2 mt-4">
+        <div className="flex items-start gap-3 justify-start max-w-full mx-2 mt-4">
           <img
             className="w-12 h-12 object-cover rounded-full"
-            src="https://static.vecteezy.com/system/resources/thumbnails/002/128/968/small_2x/phoenix-esports-logo-design-vector.jpg"
+            src="https://cdn.mypanel.link/aa7ed1/w6z1i225muys4a5u.png"
             alt="avatar"
           />
           <div>
             <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto font-medium">
-              {message && message.split("\n").map((song, index) => {
-                return <div key={index}>{song}</div>;
-              })}
+              {message &&
+                message.split("\n").map((song, index) => {
+                  return <div key={index}>{song}</div>;
+                })}
             </p>
             {/*Like Share*/}
             <div className="flex justify-between flex-wrap items-center gap-1 mt-1 max-w-[95%]">
               <div className="flex items-center gap-2">
-                <BiLike
-                  size={25}
-                  className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
-                />
-                <BiDislike
-                  size={25}
-                  className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
-                />
+                {isLike === undefined ? (
+                  <>
+                    <BiLike
+                      size={25}
+                      className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      onClick={() => handleFavariteMessage(true)}
+                    />
+                    <BiDislike
+                      size={25}
+                      className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      onClick={() => handleFavariteMessage(false)}
+                    />
+                  </>
+                ) : isLike === false ? (
+                  <>
+                    <BiDislike
+                      style={{ color: "rgb(252, 129, 129)" }}
+                      size={25}
+                      className="p-1 rounded-full bg-[#222838] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <BiLike
+                      style={{ color: "rgb(80, 213, 122)" }}
+                      size={25}
+                      className="p-1 rounded-full bg-[#222838] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                    />
+                  </>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <MdOutlineContentCopy
+                  onClick={() =>
+                    navigator.clipboard
+                      .writeText(message)
+                      .then(() => {
+                        alert("Đã sao chép vào clipboard!");
+                      })
+                      .catch((err) => {
+                        console.error("Có lỗi xảy ra khi sao chép: ", err);
+                      })
+                  }
                   size={25}
                   className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
                 />
-                <p className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#222838] text-gray-300 text-sm font-bold hover:cursor-pointer hover:bg-[#2D3450] transition-all">
+                <p
+                  onClick={handleShare}
+                  className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#222838] text-gray-300 text-sm font-bold hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                >
                   <MdIosShare size={15} className="text-gray-300" /> Share
                 </p>
               </div>

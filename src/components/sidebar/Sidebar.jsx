@@ -6,15 +6,13 @@ import GroupItemHistory from "../ChatHistory/GroupItemHistory";
 import {useState} from "react";
 import ExplorePromptModal from "../modal/ExplorePromptModal";
 
-const Sidebar = () => {
-
-
+const Sidebar = ({width}) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     return (
         <div className="h-full ">
             {/*new chat*/}
             <div
-                className=" flex gap-2 items-center px-2 py-1 border-[1px] border-gray-400 rounded-full w-[50%] hover:border-white hover:cursor-pointer transition-all">
+                className={`flex gap-2 items-center px-2 py-1 border-[1px] border-gray-400 rounded-full w-[${width ? width : "100%"}] hover:border-white hover:cursor-pointer transition-all`}>
                 <IoMdAdd size={20} className="text-white font-bold"/>
                 <p className="text-white text-sm font-medium"> New Chat</p>
             </div>
