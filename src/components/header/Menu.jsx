@@ -7,20 +7,20 @@ const Menu = ({ setIsShowSidebar }) => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      const menuSection = document.querySelector("#menu-section-class");
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        !menuSection.contains(event.target)
-      ) {
-        setIsShowSidebar(false);
-      }
-    };
+    // const handleClickOutside = (event) => {
+    //   const menuSection = document.querySelector("#menu-section-class");
+    //   if (
+    //     menuRef.current &&
+    //     !menuRef.current.contains(event.target) &&
+    //     !menuSection.contains(event.target)
+    //   ) {
+    //     setIsShowSidebar(false);
+    //   }
+    // };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // document.addEventListener("mousedown", handleClickOutside);
 
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    // return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
   return (
     <div className="relative">

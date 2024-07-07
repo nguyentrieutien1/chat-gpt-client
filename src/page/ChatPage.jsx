@@ -178,7 +178,7 @@ const ChatPage = () => {
       setConversions([]);
     };
     // Đặt hàm này để chạy mỗi 30 phút
-    const intervalId = setInterval(clearLocalStorageArray, 360 * 60 * 1000); // 30 phút = 30 * 60 * 1000 milliseconds
+    const intervalId = setInterval(clearLocalStorageArray,  24 * 60 * 60 * 1000);
 
     // Làm sạch interval khi component unmount
     return () => clearInterval(intervalId);

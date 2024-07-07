@@ -4,7 +4,7 @@ const UserMessage = ({message}) => {
             <p className="p-3 bg-white text-black rounded-lg font-medium break-words text-wrap  w-user-chat">{message}</p>
 
             <img className="w-12 h-12 object-cover rounded-full"
-                 src="https://cdn.mypanel.link/aa7ed1/di7qklstwrlrl9c4.jpg"
+                 src="https://cdn.mypanel.link/aa7ed1/oqrwz2e9cs8m1cxt.jpg"
                  alt="avatar"/>
         </div>
     )
