@@ -209,7 +209,7 @@ const ChatPage = () => {
       const result = await axios.post(
         "https://namnguyenproduct.com/api/conversion",
         {
-          data: link.concat(value).concat("Note, if the question is a list, remember to add a different, cute icon for each line in front of each sentence"),
+          data: link.concat(value).concat("Note, if the question is a list, remember to add a different, cute icon for each line in front of each sentence, remember to answer the question in detail"),
           history: conversions.map((con) => {
             return { role: con.role, parts: con.parts };
           }),
