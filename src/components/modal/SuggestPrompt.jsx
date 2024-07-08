@@ -1,12 +1,13 @@
 import {IoChevronDown, IoChevronUp, IoDiamondOutline} from "react-icons/io5";
 import {useState} from "react";
+import { questions } from "../../page/ChatPage";
 
 const SuggestPrompt = ({title, listPrompts}) => {
-    const [prompts, setPrompts] = useState(["Based on my channel, what video ideas do you have for me?", "What's the best way to promote these video ideas?", "How can I engage my audience with these video concepts?", "How can I optimize these video ideas for maximum reach?"]);
+    const [prompts, setPrompts] = useState(questions);
     const [isExpand, setIsExpand] = useState(false);
 
     return (
-        <div className="flex flex-col items-center justify-start gap-2 w-[440px] mb-3">
+        <div className="flex flex-col items-center justify-start gap-2 w-[440px] h-auto max-h-[650px] mb-3 overflow-y-scroll">
             <div className="w-full text-white flex items-center justify-center gap-2 ">
                 <IoDiamondOutline size={15}/>
                 <p className="text-[17px] font-medium ">{title}</p>

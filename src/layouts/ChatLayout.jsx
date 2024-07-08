@@ -8,7 +8,7 @@ const ChatLayout = ({ children }) => {
   const [isShowSidebar, setIsShowSidebar] = useState(false);
   return (
     <div className="bg-[#121521] w-screen h-screen">
-      <div className="px-[3%] sm:px-6 py-4 "><Menu setIsShowSidebar={setIsShowSidebar} /></div>
+      <div className="px-[3%] sm:px-6 pt-4 "><Menu setIsShowSidebar={setIsShowSidebar} /></div>
        
        {isShowSidebar && <SidebarModal setIsShowSidebar={setIsShowSidebar}/>}
       <div className="px-[3%] sm:px-6 py-4 grid grid-cols-12 w-full mx-auto sm:gap-8 xl:gap-2 h-chat-form">

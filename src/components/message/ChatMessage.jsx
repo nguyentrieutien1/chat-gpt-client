@@ -2,6 +2,7 @@ import { BiDislike, BiLike } from "react-icons/bi";
 import { MdIosShare, MdOutlineContentCopy } from "react-icons/md";
 import { useState, useEffect } from "react";
 import html2canvas from "html2canvas";
+import DOMPurify from "dompurify";
 const ChatMessage = ({
   message,
   isLike = undefined,
@@ -18,15 +19,21 @@ const ChatMessage = ({
   }, []);
 
   const handleShare = async () => {
-    const element = document.getElementById("root"); // id của phần tử bạn muốn chụp ảnh
-    html2canvas(element).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const link = document.createElement("a");
-      link.download = "screenshot-namnguyenproduct.png";
-      link.href = imgData;
-      link.click();
-    });
-  };
+    const element = document.getElementById("root"); // id of the element to capture
+
+    if (element) {
+      // Capture the screenshot
+      html2canvas(element, {
+      }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.download = "screenshot-namnguyenproduct.png";
+        link.href = imgData;
+        link.click();
+      });
+    }
+  }
+  const sanitizedMessage = DOMPurify.sanitize(message.replace(/\n/g, "<br/>"));
 
   return (
     <>
@@ -38,11 +45,16 @@ const ChatMessage = ({
             alt="avatar"
           />
           <div>
-            <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto font-medium">
-              {message &&
-                message.split("\n").map((song, index) => {
-                  return <div key={index}>{song}</div>;
-                })}
+            <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto ">
+              {sanitizedMessage &&
+                sanitizedMessage
+                  .split("<br/>")
+                  .map((line, index) => (
+                    <div
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: line }}
+                    ></div>
+                  ))}
             </p>
             {/*Like Share*/}
             <div className="flex justify-between flex-wrap items-center gap-1 mt-1 max-w-[95%]">

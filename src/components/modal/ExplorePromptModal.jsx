@@ -32,7 +32,6 @@ const ExplorePromptModal = ({isOpenModal, setIsOpenModal}) => {
                         {/*body*/}
                         <div className="relative px-6 py-3 flex-auto overflow-y-scroll no-scrollbar">
                            <SuggestPrompt title={"Most Popular"}/>
-                           <SuggestPrompt title={"Video Strategy"}/>
                         </div>
                     </div>
                 </div>
