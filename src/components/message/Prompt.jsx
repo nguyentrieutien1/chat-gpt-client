@@ -28,4 +28,5 @@ const Prompt = ({ type = "basic", handleReplaceValue = () => {}, oldQuestion }) 
   );
 };
 
+
 export default Prompt;

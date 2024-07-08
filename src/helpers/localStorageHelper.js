@@ -20,7 +20,7 @@ const localStorageHelper = {
       }
       try {
           const serializedValue = localStorage.getItem(key);
-          return serializedValue ? JSON.parse(serializedValue) : [];
+          return serializedValue ? JSON.parse(serializedValue) : undefined;
       } catch (e) {
           console.error("Error reading from localStorage", e);
           return null;
