@@ -47,7 +47,7 @@ const ChatMessage = ({
             alt="avatar"
           />
           <div>
-            <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
+            <p className="p-4 bg-[#94b5ff] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
               {sanitizedMessage &&
                 sanitizedMessage
                   .split("<br/>")
@@ -65,12 +65,12 @@ const ChatMessage = ({
                   <>
                     <BiLike
                       size={25}
-                      className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      className="p-1 rounded-full bg-[#94b5ff] text-[#4F566F] hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                       onClick={() => handleFavariteMessage(true)}
                     />
                     <BiDislike
                       size={25}
-                      className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      className="p-1 rounded-full bg-[#94b5ff] text-[#4F566F] hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                       onClick={() => handleFavariteMessage(false)}
                     />
                   </>
@@ -79,7 +79,7 @@ const ChatMessage = ({
                     <BiDislike
                       style={{ color: "rgb(252, 129, 129)" }}
                       size={25}
-                      className="p-1 rounded-full bg-[#222838] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      className="p-1 rounded-full bg-[#94b5ff] hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                     />
                   </>
                 ) : (
@@ -87,7 +87,7 @@ const ChatMessage = ({
                     <BiLike
                       style={{ color: "rgb(80, 213, 122)" }}
                       size={25}
-                      className="p-1 rounded-full bg-[#222838] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                      className="p-1 rounded-full bg-[#94b5ff] hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                     />
                   </>
                 )}
@@ -105,11 +105,11 @@ const ChatMessage = ({
                       })
                   }
                   size={25}
-                  className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                  className="p-1 rounded-full bg-[#94b5ff] text-[#4F566F] hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                 />
                 <p
                   onClick={() => handleShare(`message-id-${id}`)}
-                  className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#222838] text-gray-300 text-sm font-bold hover:cursor-pointer hover:bg-[#2D3450] transition-all"
+                  className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#94b5ff] text-gray-300 text-sm font-bold hover:cursor-pointer hover:bg-[#94b5ff] transition-all"
                 >
                   <MdIosShare size={15} className="text-gray-300" /> Share
                 </p>

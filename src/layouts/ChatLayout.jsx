@@ -7,7 +7,7 @@ import SidebarModal from "../components/modal/SidebarModal";
 const ChatLayout = ({ children }) => {
   const [isShowSidebar, setIsShowSidebar] = useState(false);
   return (
-    <div className="bg-[#121521] w-screen h-screen">
+    <div className="bg-[#80a8ff] w-screen h-screen">
       <div className="px-[3%] sm:px-6 pt-4 "><Menu setIsShowSidebar={setIsShowSidebar} /></div>
        
        {isShowSidebar && <SidebarModal setIsShowSidebar={setIsShowSidebar}/>}
