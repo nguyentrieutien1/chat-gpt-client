@@ -29,7 +29,7 @@ const Header = () => {
       <div className="flex items-center gap-4 p-3">
         {/* <input
           max={500}
-          className="bg-[#94b5ff] text-white font-medium py-4 pl-4 pr-6 rounded-lg w-full border-[0.5px] border-[#94b5ff] hover:border-gray-200 outline-1 outline-[#94b5ff] focus:outline-blue-500 transition-all"
+          className="bg-[#6696ff] text-white font-medium py-4 pl-4 pr-6 rounded-lg w-full border-[0.5px] border-[#6696ff] hover:border-gray-200 outline-1 outline-[#6696ff] focus:outline-blue-500 transition-all"
           placeholder={"Enter your link"}
           value={link}
           onChange={(e) => {

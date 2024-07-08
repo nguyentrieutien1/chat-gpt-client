@@ -20,7 +20,7 @@ const Sidebar = ({ width }) => {
             </div> */}
       {/*    explore Prompt*/}
       <button
-        className="w-full flex items-center justify-between gap-2 bg-[#94b5ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#94b5ff] transition-all "
+        className="w-full flex items-center justify-between gap-2 bg-[#6696ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#6696ff] transition-all "
         onClick={() => setIsOpenModal(true)}
       >
         <div className="flex items-center">
@@ -31,7 +31,7 @@ const Sidebar = ({ width }) => {
       </button>
 
       <button
-        className="w-full flex items-center justify-between gap-2 bg-[#94b5ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#94b5ff] transition-all "
+        className="w-full flex items-center justify-between gap-2 bg-[#6696ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#6696ff] transition-all "
         onClick={() => {
             localStorageHelper.localStorageHelper.setItem("conversions", [])
             window.location.href = "/"
@@ -44,7 +44,7 @@ const Sidebar = ({ width }) => {
         <GoArrowUpRight size={20} className="text-white" />
       </button>
       {/*    History*/}
-      {/* <div className="bg-[#94b5ff] rounded-lg mt-4 px-3 py-3 h-auto">
+      {/* <div className="bg-[#6696ff] rounded-lg mt-4 px-3 py-3 h-auto">
                 <div className="flex items-center gap-2">
                     <MdHistory size={20} className="text-white font-medium"/>
                     <p className="text-white text-lg font-medium">Chat History</p>

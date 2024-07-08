@@ -327,11 +327,11 @@ const ChatPage = () => {
       <div className="absolute bottom-0 left-0 right-0">
         <form
           onSubmit={handleSubmit}
-          className="relative pt-3 bg-[#80a8ff] w-full"
+          className="relative pt-3 bg-[#4680ff] w-full"
         >
           <input
             max={500}
-            className="bg-[#94b5ff] text-white font-medium py-4 pl-4 pr-28 rounded-lg w-full border-[0.5px] border-[#94b5ff] hover:border-gray-200 outline-1 outline-[#94b5ff] focus:outline-blue-500 transition-all"
+            className="bg-[#6696ff]  text-white font-medium py-4 pl-4 pr-28 rounded-lg w-full border-[0.5px] border-[#6696ff] hover:border-gray-200 outline-1 outline-[#6696ff] focus:outline-blue-500 transition-all placeholder-white"
             value={value}
             onChange={handleChange}
             placeholder={"Ask me anything..."}

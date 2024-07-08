@@ -14,7 +14,7 @@ const Prompt = ({ type = "basic", handleReplaceValue = () => {}, oldQuestion }) 
             <p
             onClick={() => handleReplaceValue(prompt)}
               key={index}
-              className="my-2 inline text-[#878FA1] text-sm font-medium w-fit p-3 py-4 sm:p-2 border-[1px] border-gray-400 rounded-full hover:border-white hover:text-gray-100 hover:cursor-pointer transition-all"
+              className="my-2 inline text-[#878FA1] text-sm font-medium w-fit p-3 py-4 sm:p-2 border-[1px] border-white rounded-full hover:border-white hover:text-gray-100 hover:cursor-pointer transition-all"
             >
               <div className="font-bold flex items-center justify-start gap-2 text-white">
                 {type !== "basic" && <IoDiamondOutline size={15} />}

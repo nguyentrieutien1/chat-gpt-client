@@ -17,7 +17,7 @@ const SuggestPrompt = ({title, listPrompts}) => {
                 prompts.map((prompt, index) => (
                     <div
                         key={index} // Add a unique key for each element
-                        className="w-full text-white flex items-center justify-center gap-2 px-6 bg-[#94b5ff] py-2 rounded-full text-center ">
+                        className="w-full text-white flex items-center justify-center gap-2 px-6 py-2 border-white border-[1px] border-white rounded-full text-center ">
                         <IoDiamondOutline size={15} className="block mr-2"/>
                         <p className="text-[16px] font-normal break-words text-wrap overflow-hidden w-max">
                             {prompt}
@@ -30,7 +30,7 @@ const SuggestPrompt = ({title, listPrompts}) => {
                     {prompts.slice(0, 2).map((prompt, index) => (
                         <div
                             key={index} // Add a unique key for each element
-                            className="w-full text-white flex items-center justify-center gap-2 px-6 bg-[#94b5ff] py-2 rounded-full text-center ">
+                            className="w-full text-white flex items-center justify-center gap-2 px-6 py-2 rounded-full text-center border-[1px] border-white ">
                             <IoDiamondOutline size={15} className="block mr-2"/>
                             <p className="text-[16px] font-normal break-words text-wrap overflow-hidden w-max">
                                 {prompt}

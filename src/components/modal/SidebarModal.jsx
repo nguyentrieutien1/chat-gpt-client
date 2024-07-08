@@ -12,7 +12,7 @@ export default function SidebarModal({setIsShowSidebar}) {
                 <div className="relative w-full sm:w-full lg:w-1/2 xl:w-4/5 my-16 mx-auto max-w-3xl">
                     {/*content*/}
                     <div
-                        className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full bg-[#94b5ff] outline-none focus:outline-none max-h-[90%]"
+                        className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full bg-[#6696ff] outline-none focus:outline-none max-h-[90%]"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/*header*/}

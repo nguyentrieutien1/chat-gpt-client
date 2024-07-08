@@ -17,11 +17,11 @@ const ExplorePromptModal = ({ isOpenModal, setIsOpenModal }) => {
         <div className="relative w-auto my-16 mx-auto max-w-3xl">
           {/*content*/}
           <div
-            className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full bg-[#94b5ff] outline-none focus:outline-none max-h-[90%]"
+            className="border-0 rounded-2xl shadow-lg relative flex flex-col w-full bg-[#6696ff] outline-none focus:outline-none max-h-[90%]"
             onClick={(e) => e.stopPropagation()}
           >
             {/*header*/}
-            <div className="flex items-center justify-between px-5 py-2 border-b border-solid border-gray-500 rounded-t">
+            <div className="flex items-center justify-between px-5 py-2 border-b border-solid border-white rounded-t">
               <h3 className="text-[18px] text-white font-semibold">
                 Explore Prompts
               </h3>
