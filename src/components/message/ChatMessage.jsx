@@ -1,9 +1,9 @@
 import { BiDislike, BiLike } from "react-icons/bi";
 import { MdIosShare, MdOutlineContentCopy } from "react-icons/md";
 import { useState, useEffect } from "react";
-import html2canvas from "html2canvas";
+import TextToSpeech from "text-to-speech-js"
 import DOMPurify from "dompurify";
-import { v4 as uuidv4 } from 'uuid'; // Import hàm tạo UUID từ thư viện uuid
+import { v4 as uuidv4 } from 'uuid'; 
 const ChatMessage = ({
   message,
   isLike = undefined,
@@ -20,20 +20,7 @@ const ChatMessage = ({
   }, []);
 
   const handleShare = async (uuid) => {
-    console.log();
-    const element = document.getElementById(`${uuid}`); // id of the element to capture
-    console.log(element);
-    if (element) {
-      // Capture the screenshot
-      html2canvas(element, {
-      }).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const link = document.createElement("a");
-        link.download = "screenshot-namnguyenproduct.png";
-        link.href = imgData;
-        link.click();
-      });
-    }
+    TextToSpeech.talk("Hello Beautiful World!");
   }
   const sanitizedMessage = DOMPurify.sanitize(message.replace(/\n/g, "<br/>"));
 
