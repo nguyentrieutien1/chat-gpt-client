@@ -3,6 +3,7 @@ import { MdIosShare, MdOutlineContentCopy } from "react-icons/md";
 import { useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 import DOMPurify from "dompurify";
+import { v4 as uuidv4 } from 'uuid'; // Import hàm tạo UUID từ thư viện uuid
 const ChatMessage = ({
   message,
   isLike = undefined,
@@ -18,9 +19,10 @@ const ChatMessage = ({
     return () => clearTimeout(timer);
   }, []);
 
-  const handleShare = async () => {
-    const element = document.getElementById("root"); // id of the element to capture
-
+  const handleShare = async (uuid) => {
+    console.log();
+    const element = document.getElementById(`${uuid}`); // id of the element to capture
+    console.log(element);
     if (element) {
       // Capture the screenshot
       html2canvas(element, {
@@ -35,6 +37,7 @@ const ChatMessage = ({
   }
   const sanitizedMessage = DOMPurify.sanitize(message.replace(/\n/g, "<br/>"));
 
+  const id = uuidv4()
   return (
     <>
       {!isLoading && (
@@ -45,7 +48,7 @@ const ChatMessage = ({
             alt="avatar"
           />
           <div>
-            <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto ">
+            <p className="p-4 bg-[#222838] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
               {sanitizedMessage &&
                 sanitizedMessage
                   .split("<br/>")
@@ -106,7 +109,7 @@ const ChatMessage = ({
                   className="p-1 rounded-full bg-[#222838] text-[#4F566F] hover:cursor-pointer hover:bg-[#2D3450] transition-all"
                 />
                 <p
-                  onClick={handleShare}
+                  onClick={() => handleShare(`message-id-${id}`)}
                   className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#222838] text-gray-300 text-sm font-bold hover:cursor-pointer hover:bg-[#2D3450] transition-all"
                 >
                   <MdIosShare size={15} className="text-gray-300" /> Share
