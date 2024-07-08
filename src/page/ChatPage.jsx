@@ -187,7 +187,8 @@ const ChatPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
+    if(!value) return;
     try {
       var link =
         " ";
