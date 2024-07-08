@@ -168,7 +168,7 @@ const ChatPage = () => {
 
   useEffect(() => {
     const conversionsFromLocalStorage =
-      localStorageHelper.localStorageHelper.getItem("conversions");
+      localStorageHelper.localStorageHelper.getItem("conversions") || [];
     setConversions([...conversionsFromLocalStorage]);
   }, []);
 
