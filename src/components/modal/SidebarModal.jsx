@@ -6,7 +6,7 @@ export default function SidebarModal({setIsShowSidebar}) {
   return (
     <>
             <div
-                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none m-2"
                 onClick={() => setIsShowSidebar(false)}
             >
                 <div className="relative w-full sm:w-full lg:w-1/2 xl:w-4/5 my-16 mx-auto max-w-3xl">
@@ -17,7 +17,7 @@ export default function SidebarModal({setIsShowSidebar}) {
                     >
                         {/*header*/}
                         <div
-                            className="flex items-center justify-between px-5 py-2 border-b border-solid border-gray-500 rounded-t">
+                            className="flex items-center justify-between px-5 py-2 border-b border-solid border-white rounded-t">
                             <h3 className="text-[18px] text-white font-semibold">
                                 Chat history
                             </h3>

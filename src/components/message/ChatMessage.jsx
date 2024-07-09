@@ -47,7 +47,7 @@ const ChatMessage = ({
             alt="avatar"
           />
           <div>
-            <p className="p-4 bg-[#6696ff] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
+            <p className=" text-[14px] sm:text-[16px] p-4 bg-[#6696ff] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
               {sanitizedMessage &&
                 sanitizedMessage
                   .split("<br/>")

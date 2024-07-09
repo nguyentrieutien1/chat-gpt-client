@@ -16,7 +16,7 @@ const NewChat = ({option , setOption}) => {
                         <p className="flex items-center justify-center gap-1 text-lg font-medium text-white">
                             <IoDiamondOutline
                                 size={15}/> Advance</p>
-                        <p className="text-sm font-medium leading-none text-white">social mode</p>
+                        <p className="text-sm font-medium leading-none text-white">Social mode</p>
                     </div>
                     <div
                         className={`${option !== "advance" ? "bg-gradient-to-r from-[#5143a2] to-[#0e8bff] rounded-full " : "text-[#878fad] hover:text-white"} flex flex-col px-4 py-1 hover:cursor-pointer text-center transition-all`}
