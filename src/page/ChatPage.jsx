@@ -289,7 +289,7 @@ const ChatPage = () => {
     <div id="form_chat" className="relative h-full w-[90%] mx-auto">
       <div
         ref={messageContainer}
-        className="h-chat-message pb-6"
+        className="h-chat-message"
         style={{ overflowY: "scroll" }}
       >
         {conversions.length > 0 ? (
@@ -324,7 +324,7 @@ const ChatPage = () => {
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-[-10px] left-0 right-0">
         <form
           onSubmit={handleSubmit}
           className="relative pt-3 bg-[#4680ff] w-full"
@@ -346,7 +346,7 @@ const ChatPage = () => {
           </div>
         </form>
 
-        <p className="text-right mt-1 text-white text-lg">
+        <p className="text-right mt-1 text-white text-[13px] sm:text-[16px]">
           {value.length} /500
         </p>
         {/* <p className="text-center text-lg font-normal text-[#BBBCC1] mt-2">

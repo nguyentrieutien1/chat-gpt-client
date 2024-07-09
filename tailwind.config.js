@@ -39,7 +39,7 @@ module.exports = {
                     "max-width": 'calc(100% - 64px)'
                 },
                 '.h-chat-message': {
-                    "height": 'calc(100vh - 172px)',
+                    "height": 'calc(100vh - 140px)',
                     "margin-bottom": "93px"
                 }
             };
