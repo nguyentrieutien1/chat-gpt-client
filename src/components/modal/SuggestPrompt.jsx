@@ -7,7 +7,7 @@ const SuggestPrompt = ({title, listPrompts}) => {
     const [isExpand, setIsExpand] = useState(false);
 
     return (
-        <div className="flex flex-col items-center justify-start gap-2 w-[100%] h-auto max-h-[650px] mb-3 overflow-y-scroll">
+        <div className="flex flex-col items-center justify-start gap-2 w-[100%] h-auto max-h-[550px] mb-3 overflow-y-scroll">
             <div className="w-full text-white flex items-center justify-center gap-2 ">
                 <IoDiamondOutline size={15} className=""/>
                 <p className="text-[17px] font-medium ">{title}</p>
@@ -31,7 +31,7 @@ const SuggestPrompt = ({title, listPrompts}) => {
                         <div
                             key={index} // Add a unique key for each element
                             className="w-full text-white flex items-center justify-center p-2 rounded-lg text-center border-[1px] border-white ">
-                            <IoDiamondOutline size={15} className="block mr-2  hidden sm:block"/>
+                            <IoDiamondOutline size={15} className="block mr-2 "/>
                             <p className="text-[16px] font-normal break-words text-wrap overflow-hidden w-max">
                                 {prompt}
                             </p>
