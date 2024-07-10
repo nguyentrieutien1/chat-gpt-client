@@ -3,7 +3,9 @@ import { MdIosShare, MdOutlineContentCopy } from "react-icons/md";
 import { useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 import DOMPurify from "dompurify";
-import { v4 as uuidv4 } from 'uuid'; // Import hàm tạo UUID từ thư viện uuid
+import { v4 as uuidv4 } from "uuid"; // Import hàm tạo UUID từ thư viện uuid
+import copy from "copy-to-clipboard";
+
 const ChatMessage = ({
   message,
   isLike = undefined,
@@ -24,8 +26,7 @@ const ChatMessage = ({
     console.log(element);
     if (element) {
       // Capture the screenshot
-      html2canvas(element, {
-      }).then((canvas) => {
+      html2canvas(element, {}).then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
         const link = document.createElement("a");
         link.download = "screenshot-namnguyenproduct.png";
@@ -33,10 +34,10 @@ const ChatMessage = ({
         link.click();
       });
     }
-  }
+  };
   const sanitizedMessage = DOMPurify.sanitize(message.replace(/\n/g, "<br/>"));
 
-  const id = uuidv4()
+  const id = uuidv4();
   return (
     <>
       {!isLoading && (
@@ -47,7 +48,10 @@ const ChatMessage = ({
             alt="avatar"
           />
           <div>
-            <p className=" text-[14px] sm:text-[16px] p-4 bg-[#6696ff] text-white rounded-lg break-words text-wrap w-auto" id={`message-id-${id}`}>
+            <p
+              className=" text-[14px] sm:text-[16px] p-4 bg-[#6696ff] text-white rounded-lg break-words text-wrap w-auto"
+              id={`message-id-${id}`}
+            >
               {sanitizedMessage &&
                 sanitizedMessage
                   .split("<br/>")
@@ -94,17 +98,10 @@ const ChatMessage = ({
               </div>
               <div className="flex items-center gap-2">
                 <MdOutlineContentCopy
-                  onClick={() =>
-                    navigator.clipboard
-                      .writeText(message)
-                      .then(() => {
-                        alert("Đã sao chép vào clipboard!");
-                        window.parent.postMessage(message, "*");
-                      })
-                      .catch((err) => {
-                        console.error("Có lỗi xảy ra khi sao chép: ", err);
-                      })
-                  }
+                  onClick={() => {
+                    copy("Text");
+                    alert("Đã sao chép vào clipboard!");
+                  }}
                   size={25}
                   className="p-1 rounded-full bg-[#6696ff] text-[#4F566F] hover:cursor-pointer hover:bg-[#6696ff] transition-all"
                 />
