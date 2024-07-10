@@ -10,8 +10,8 @@ import LoadingMessage from "../components/loading/LoadingMessage";
 import Prompt from "../components/message/Prompt";
 import { TextHistoryContext } from "../components/ChatHistory/ItemHistory";
 import { useMyContext } from "../components/provider/MyProvider";
-import {getRandomQuestions} from "../helpers/getRandomQuestions"
-export   const questions = [
+import { getRandomQuestions } from "../helpers/getRandomQuestions";
+export const questions = [
   "What are the best practices for optimizing YouTube video titles and descriptions for SEO?",
   "How can you create engaging thumbnails that attract clicks?",
   "What tools can help in editing and enhancing YouTube videos?",
@@ -143,13 +143,12 @@ export   const questions = [
   "What tools can help you schedule and manage your tweets",
 ];
 const ChatPage = () => {
-  const { chanelName, setChanelName  } = useMyContext();
-
+  const { chanelName, setChanelName } = useMyContext();
 
   const [oldQuestion, setOldQuestion] = useState([]);
 
   const [countChar, setCountChar] = useState(0);
-  const[isRandom, setIsRandom] = useState(false);
+  const [isRandom, setIsRandom] = useState(false);
   const [value, setValue] = useState("");
   const [isBotAnswering, setIsBotAnswering] = useState(false);
   const handleChange = (e) => {
@@ -162,9 +161,8 @@ const ChatPage = () => {
   const messageContainer = useRef(null);
 
   useEffect(() => {
-
-    setOldQuestion([...getRandomQuestions(questions)])
-  }, [])
+    setOldQuestion([...getRandomQuestions(questions)]);
+  }, []);
 
   useEffect(() => {
     const conversionsFromLocalStorage =
@@ -179,7 +177,7 @@ const ChatPage = () => {
       setConversions([]);
     };
     // Đặt hàm này để chạy mỗi 30 phút
-    const intervalId = setInterval(clearLocalStorageArray,  24 * 60 * 60 * 1000);
+    const intervalId = setInterval(clearLocalStorageArray, 24 * 60 * 60 * 1000);
 
     // Làm sạch interval khi component unmount
     return () => clearInterval(intervalId);
@@ -187,11 +185,10 @@ const ChatPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if(!value) return;
+
+    if (!value) return;
     try {
-      var link =
-        " ";
+      var link = " ";
       // if(localStorageHelper.localStorageHelper.getItem("link").length > 0) {
       //   link = `${localStorageHelper.localStorageHelper.getItem("link")}, `
       // }
@@ -209,7 +206,11 @@ const ChatPage = () => {
       const result = await axios.post(
         "https://namnguyenproduct.com/api/conversion",
         {
-          data: link.concat(value).concat("Note, if the question is a list, remember to add a different, cute icon for each line in front of each sentence, remember to answer the question in detail"),
+          data: link
+            .concat(value)
+            .concat(
+              "Note, if the question is a list, remember to add a different, cute icon for each line in front of each sentence, remember to answer the question in detail"
+            ),
           history: conversions.map((con) => {
             return { role: con.role, parts: con.parts };
           }),
@@ -245,7 +246,7 @@ const ChatPage = () => {
       ]);
       setIsBotAnswering(false);
 
-      setOldQuestion([...getRandomQuestions(questions)])
+      setOldQuestion([...getRandomQuestions(questions)]);
     } finally {
       setIsBotAnswering(false);
     }
@@ -320,7 +321,11 @@ const ChatPage = () => {
 
         {isBotAnswering && <LoadingMessage isSuccess={isBotAnswering} />}
         {!isBotAnswering && (
-          <Prompt oldQuestion={oldQuestion} isRandom={isRandom} handleReplaceValue={(text) => setValue(text)} />
+          <Prompt
+            oldQuestion={oldQuestion}
+            isRandom={isRandom}
+            handleReplaceValue={(text) => setValue(text)}
+          />
         )}
       </div>
 

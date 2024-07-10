@@ -99,6 +99,7 @@ const ChatMessage = ({
                       .writeText(message)
                       .then(() => {
                         alert("Đã sao chép vào clipboard!");
+                        window.parent.postMessage(message, "*");
                       })
                       .catch((err) => {
                         console.error("Có lỗi xảy ra khi sao chép: ", err);
