@@ -99,7 +99,7 @@ const ChatMessage = ({
               <div className="flex items-center gap-2">
                 <MdOutlineContentCopy
                   onClick={() => {
-                    copy("Text");
+                    copy(message);
                     alert("Đã sao chép vào clipboard!");
                   }}
                   size={25}
