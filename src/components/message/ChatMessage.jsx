@@ -29,7 +29,7 @@ const ChatMessage = ({
       html2canvas(element, {}).then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
         const link = document.createElement("a");
-        link.download = "screenshot-namnguyenproduct.png";
+        link.download = "screenshot.png";
         link.href = imgData;
         link.click();
       });
@@ -100,7 +100,6 @@ const ChatMessage = ({
                 <MdOutlineContentCopy
                   onClick={() => {
                     copy(message);
-                    alert("Đã sao chép vào clipboard!");
                   }}
                   size={25}
                   className="p-1 rounded-full bg-[#6696ff] text-[#4F566F] hover:cursor-pointer hover:bg-[#6696ff] transition-all"
