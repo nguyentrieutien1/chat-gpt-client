@@ -6,7 +6,6 @@ const UserMessage = ({ message }) => {
     localStorageHelper.localStorageHelper.getItem("avatar") ||
       "https://cdn.mypanel.link/aa7ed1/di7qklstwrlrl9c4.jpg"
   );
-  console.log(avatar);
   const handleSetAvatar = () => {
     if (avatar === "https://cdn.mypanel.link/aa7ed1/di7qklstwrlrl9c4.jpg") {
       setAvatar("https://cdn.mypanel.link/aa7ed1/oqrwz2e9cs8m1cxt.jpg");

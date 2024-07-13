@@ -23,7 +23,6 @@ const ChatMessage = ({
 
   const handleShare = async (uuid) => {
     const element = document.getElementById(`${uuid}`); // id of the element to capture
-    console.log(element);
     if (element) {
       // Capture the screenshot
       html2canvas(element, {}).then((canvas) => {

@@ -9,8 +9,7 @@ import { useMyContext } from "../provider/MyProvider";
 
 export const TextHistoryContext = createContext();
 const ItemHistory = () => {
-  const { chanelName, setChanelName  } = useMyContext();
-    console.log(chanelName);
+  const { chanelName, setChanelName } = useMyContext();
   const [isEdit, setIsEdit] = useState(false);
   const [oldChanelName, setOldChanelName] = useState(chanelName);
   const [newChanelName, setNewChanelName] = useState(chanelName);
@@ -27,7 +26,7 @@ const ItemHistory = () => {
             onChange={(e) => setNewChanelName(e.target.value)}
           />
         ) : (
-          <TextHistoryContext.Provider value={{chanelName,  setChanelName}}>
+          <TextHistoryContext.Provider value={{ chanelName, setChanelName }}>
             <p className="max-w-full text-white text-[16px] font-normal text-nowrap truncate text-box-history">
               {chanelName}
             </p>
