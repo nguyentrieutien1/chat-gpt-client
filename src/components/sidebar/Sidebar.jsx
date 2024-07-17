@@ -1,7 +1,7 @@
 import { MdHistory } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 import { GoArrowUpRight } from "react-icons/go";
-import { BsMenuUp } from "react-icons/bs";
+import { BsMenuDown, BsMenuUp } from "react-icons/bs";
 import GroupItemHistory from "../ChatHistory/GroupItemHistory";
 import { useState } from "react";
 import ExplorePromptModal from "../modal/ExplorePromptModal";
@@ -33,13 +33,26 @@ const Sidebar = ({ width }) => {
       <button
         className="w-full flex items-center justify-between gap-2 bg-[#6696ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#6696ff] transition-all "
         onClick={() => {
-            localStorageHelper.localStorageHelper.setItem("conversions", [])
-            window.location.href = "/"
+          localStorageHelper.localStorageHelper.setItem("conversions", []);
+          window.location.href = "/";
         }}
       >
         <div className="flex items-center">
           <CiTrash size={20} className="text-white mr-3" />
           <p className="text-white text-[16px] font-medium">Clear chat</p>
+        </div>
+        <GoArrowUpRight size={20} className="text-white" />
+      </button>
+
+      <button
+        className="w-full flex items-center justify-between gap-2 bg-[#6696ff] mt-3 rounded-xl px-3 py-2 hover:cursor-pointer hover:bg-[#6696ff] transition-all "
+        onClick={() => window.open("https://1kview.com")}
+      >
+        <div className="flex items-center">
+          <BsMenuDown size={20} className="text-white mr-3" />
+          <p className="text-white text-[16px] font-medium">
+            1kview.com - Social service
+          </p>
         </div>
         <GoArrowUpRight size={20} className="text-white" />
       </button>
